@@ -125,7 +125,6 @@ export default function DataList({
 
   async function handleChangePage(_, newPage) {
     await fetchPaginate({ page: newPage });
-    setSelectedState({});
   }
 
   async function handleChangeLimit(e) {
@@ -177,6 +176,18 @@ export default function DataList({
   function handleAdd() {
     navigate(`${path}/create`);
   }
+
+  useEffect(() => {
+    const idSet = new Set(idList);
+    setSelectedState((selectedState) =>
+      Object.entries(selectedState).reduce((result, [id, selected]) => {
+        if (selected && idSet.has(id)) {
+          result[id] = selected;
+        }
+        return result;
+      }, {})
+    );
+  }, [idList]);
 
   const numSelected = selectedList.length;
   const maxSelected = Math.min(idList.length, limit);

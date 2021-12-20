@@ -41,12 +41,12 @@ export default function DataDelete({
       await Promise.all([
         ...selectedIdList.map((id) => dispatch(deleteAction(id))),
       ]);
-      dispatch(fetchPaginationAction({ page: 0 }));
       handleCancel();
     } catch (error) {
       setError(error);
       console.log('error deleting data:', error);
     } finally {
+      dispatch(fetchPaginationAction({ page: 0 }));
       setLoading(false);
     }
   }
