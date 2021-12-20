@@ -1,0 +1,6 @@
+{
+  "mongoConfig": {
+    "serverUrl": "mongodb+srv://demo1:demo123@cluster0.2nmo4.mongodb.net/myFirstDatabase",
+    "database": "CS-554-Group-Project"
+  }
+}

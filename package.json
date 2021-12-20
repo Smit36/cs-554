@@ -1,0 +1,36 @@
+{
+  "name": "cs-554-project",
+  "version": "1.0.0",
+  "description": "Fall 2021 CS-554 Final Project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "seed": "node seed.js",
+    "dev": "node seed.js && node index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend && npm run seed",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidhu34/cs-554.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidhu34/cs-554/issues"
+  },
+  "homepage": "https://github.com/davidhu34/cs-554#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "bluebird": "^3.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "firebase-admin": "^10.0.0",
+    "lodash": "^4.17.21",
+    "mongodb": "^3.6.3",
+    "nodemon": "^2.0.15",
+    "redis": "^4.0.1",
+    "uuid": "^8.3.2"
+  }
+}
